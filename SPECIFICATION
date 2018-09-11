@@ -1,5 +1,16 @@
 # -*- mode: org -*-
 #+OPTIONS: toc:2
+* table of contents
+- [[*overview][overview]]
+- [[*guessing game v0.1.0][guessing game v0.1.0]]
+    - [[*sample output][sample output]]
+    - [[*topics covered in this version][topics covered in this version]]
+- [[*guessing game v0.2.0][guessing game v0.2.0]]
+    - [[*REST API specification][REST API specification]]
+    - [[*sample output][sample output]]
+    - [[*topics covered in this version][topics covered in this version]]
+- [[*guessing game v0.3.0][guessing game v0.3.0]]
+* overview
 This is the specification for the guessing game. The project is intended to be
 completed in three stages, with each stage introducing the programmer to
 additional aspects of the target language. If you are already familiar with at least
@@ -14,6 +25,7 @@ Make a simple command-line game that has the user guess a randomly-generated
 number between 1 and 100 (inclusive). The user should be prompted to play again
 once the number is guessed.
 ** sample output
+#+BEGIN_VERBATIM
 $ ./guessing-game
 I am thinking of a number between 1 and 100. Can you guess it?
 Enter guess: 50
@@ -46,6 +58,7 @@ Enter guess: 87
 YOU GOT IT!!
 Play again? (Y/n) n
 Nice playing with you!
+#+END_VERBATIM
 ** topics covered in this version
 - [X] Basic data-types (bool, int/float, string)
 - [X] I/O + string formatting
