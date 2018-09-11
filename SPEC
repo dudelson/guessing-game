@@ -1,0 +1,116 @@
+This is the specification for the guessing game. The project is intended to be
+completed in three stages, with each stage introducing the programmer to
+additional aspects of the target language. If you are already familiar with at least
+one programming language, the first section will probably feel really easy. That
+is intentional, because I find that learning a new language entails an initial
+overhead of getting used the syntax, the tooling, etc., as well as ironing out
+any issues with editor support. Use the first section as an opportunity to sort
+all of that out. After completing each section, git commit and celebrate! You're
+that much closer to learning a new programming language.
+* guessing game v0.1.0
+Make a simple command-line game that has the user guess a randomly-generated
+number between 1 and 100 (inclusive). The user should be prompted to play again
+once the number is guessed.
+** sample output
+$ ./guessing-game
+I am thinking of a number between 1 and 100. Can you guess it?
+Enter guess: 50
+too low
+Enter guess: 75
+too high
+Enter guess: 63
+too low
+Enter guess: 69
+too high
+Enter guess: 66
+too high
+Enter guess: 64
+YOU GOT IT!!
+Play again? (Y/n)
+I am thinking of a number between 1 and 100. Can you guess it?
+Enter guess: 50
+too low
+Enter guess: 75
+too low
+Enter guess: 88
+too high
+Enter guess: 81
+too low
+Enter guess: 84
+too low
+Enter guess: 86
+too low
+Enter guess: 87
+YOU GOT IT!!
+Play again? (Y/n) n
+Nice playing with you!
+** topics covered in this version
+- [X] Basic data-types (bool, int/float, string)
+- [X] I/O + string formatting
+- [X] error handling (exceptions, result types, or whatever the de facto best
+      pratices are)
+- [X] random numbers / random data generation
+- [ ] algebraic data-types (records/variants)
+- [ ] abstact data types (lists, hash tables, BSTs)
+- [ ] classes/modules/whathaveyou
+- [ ] threading / async programming
+- [ ] importing/using packages/modules
+* guessing game v0.2.0
+Enhance the guessing game by allowing the client to get/post scores and statistics
+via a REST API. Write a simple webserver that implements this API.
+
+In order to easily access this new functionality, the client UI will change a
+little bit:
+    - The entry point of the program will be a main menu offering the following
+      options:
+        - [P]lay
+        - [L]ogin/[L]ogout
+        - [S]tats
+        - [V]iew profile
+        - [Q]uit
+    - The "[P]lay" option starts a new round of the guessing game. When the game
+      ends, the play again prompt will offer the additional options 'm', 'q', and
+      '?' in addition to 'y' and 'n'. 'm' returns to the main menu, 'q' quits,
+      and '?' shows a help dialog which describes what each key does.
+    - The "[L]ogin" option lets the user announce their username to the server
+      via a REST API call. For more details on users and the REST API, see the
+      REST API specification further down in this section. Once the user is
+      logged in, this option changes to "[L]ogout", and vice versa.
+    - The "[S]tats" option lets the player view statistics about the history of
+      the game from the server. The following stats are displayed:
+        - the most common secret numbers (median)
+        - the top-ranked user (ranked by average number of guesses needed to win)
+        - the mean and median number of guesses needed to win
+    - The "[V]iew Profile" option lets the player view details about their
+      personal profile, including:
+    - The "[Q]uit" option quits.
+
+The server should listen on port 8778 (or another port of your choosing) and
+should serve requests to the REST API described below.
+
+Hints:
+    - I like to split my implementation into several packages/modules: A client
+      package, a server package, and a common package (for code that's shared
+      between the client and the server).
+
+v3 requires a client component and a server component. The server can run
+locally, and offers a REST API that the client can use to get and fetch
+statistics. I think the way I'll do it is the server will store one big database
+with everyone's scores in it, sort of like an arcade game. So when the client
+posts the result of a new game, it sends the user's chosen username, the secret
+number, and how many guesses it took the user to guess it. Given a big table of
+all this info, we can compute the following stats:
+
+        => covers: command-line libraries and utilities, imports, dependency management
+** REST API specification
+*** ~/users/<username>~
+**** GET
+Returns the user ID
+**** POST
+Creates a new user with name ~<username>~.
+** sample output
+** topics covered in this version
+* guessing game v0.3.0
+do API calls in a separate thread so that the CLI doesn't block
+
+=> covers: async
