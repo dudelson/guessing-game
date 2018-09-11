@@ -2,14 +2,14 @@
 # Guessing Game
 This guessing game is my go-to project for learning new programming languages.
 It is intended to be completed in an active-learning style with the
-aid of the official docs for the language and [https://learnxinyminutes.com/](LearnXInYMinutes).
+aid of the official docs for the language and [LearnXInYMinutes](https://learnxinyminutes.com/).
 It is shamelessly stolen (with gratitude :heart:) from the
 [official rust programming language
 guide](https://doc.rust-lang.org/book/2018-edition/ch02-00-guessing-game-tutorial.html).
 I have added additional requirements meant to give the programmer the
 opportunity to expose themselves to several important aspects of any programming
 language. These include:
-- Basic data-types (bool, int/float, string, etc.)
+- Basic data-types (bool, int, float, string, etc.)
 - I/O and string formatting
 - error handling (exceptions, result types, or whatever the de facto best
   pratices are)

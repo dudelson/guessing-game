@@ -25,7 +25,7 @@ Make a simple command-line game that has the user guess a randomly-generated
 number between 1 and 100 (inclusive). The user should be prompted to play again
 once the number is guessed.
 ** sample output
-#+BEGIN_VERBATIM
+#+BEGIN_EXAMPLE
 $ ./guessing-game
 I am thinking of a number between 1 and 100. Can you guess it?
 Enter guess: 50
@@ -58,7 +58,7 @@ Enter guess: 87
 YOU GOT IT!!
 Play again? (Y/n) n
 Nice playing with you!
-#+END_VERBATIM
+#+END_EXAMPLE
 ** topics covered in this version
 - [X] Basic data-types (bool, int/float, string)
 - [X] I/O + string formatting
