@@ -1,3 +1,4 @@
+# -*- mode: org -*-
 This is the specification for the guessing game. The project is intended to be
 completed in three stages, with each stage introducing the programmer to
 additional aspects of the target language. If you are already familiar with at least
