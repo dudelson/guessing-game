@@ -1,8 +1,9 @@
-# -*- mode: markdown -*-
+[//]: # (-*- mode: markdown -*-)
+# Guessing Game
 This guessing game is my go-to project for learning new programming languages.
 It is intended to be completed in an active-learning style with the
-aid of the official docs for the language and [[https://learnxinyminutes.com/][LearnXInYMinutes]].
-It is shamelessly stolen (with gratitude) from the
+aid of the official docs for the language and [https://learnxinyminutes.com/](LearnXInYMinutes).
+It is shamelessly stolen (with gratitude :heart:) from the
 [official rust programming language
 guide](https://doc.rust-lang.org/book/2018-edition/ch02-00-guessing-game-tutorial.html).
 I have added additional requirements meant to give the programmer the
